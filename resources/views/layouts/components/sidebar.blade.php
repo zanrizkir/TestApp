@@ -34,16 +34,17 @@
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <li class="nav-item">
-                    <a href="{{ url('/admin/post') }}" class="nav-link ">
-                        {{-- <a href="{{ url('/admin/post') }}" class="nav-link {{ $judul === 'Post' ? 'active' : '' }}"> --}}
-                        <i class="fas fa-vote-yea"></i>&nbsp;
+                <!-- Add icons to the links using the .nav-icon class
+                       with font-awesome or any other icon font library -->
+                <li class="nav-item menu-open">
+                    {{-- <a href="/crud" class="nav-link {{ $active == 'crud' ? 'active' : null }}"> --}}
+                    <a href="/crud" class="nav-link ">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            Posts
+                            Post
                         </p>
                     </a>
                 </li>
-                
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
