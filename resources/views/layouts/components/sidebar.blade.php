@@ -38,7 +38,7 @@
                        with font-awesome or any other icon font library -->
                 <li class="nav-item menu-open">
                     {{-- <a href="/crud" class="nav-link {{ $active == 'crud' ? 'active' : null }}"> --}}
-                    <a href="/crud" class="nav-link ">
+                    <a href="/post" class="nav-link ">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Post

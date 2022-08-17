@@ -36,8 +36,6 @@
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="{{ url('/home') }}"
-                                        class="text-decoration-none">Home</a></li>
                                 {{-- <li class="breadcrumb-item active">{{ $judul }}</li> --}}
                             </ol>
                         </div><!-- /.col -->
