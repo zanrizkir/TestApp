@@ -36,12 +36,30 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                        with font-awesome or any other icon font library -->
-                <li class="nav-item menu-open">
+                <li class="nav-item ">
                     {{-- <a href="/crud" class="nav-link {{ $active == 'crud' ? 'active' : null }}"> --}}
                     <a href="/post" class="nav-link ">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Post
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    {{-- <a href="/crud" class="nav-link {{ $active == 'crud' ? 'active' : null }}"> --}}
+                    <a href="/guru" class="nav-link ">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Guru
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    {{-- <a href="/crud" class="nav-link {{ $active == 'crud' ? 'active' : null }}"> --}}
+                    <a href="{{route('murid.index')}}" class="nav-link ">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Murid
                         </p>
                     </a>
                 </li>

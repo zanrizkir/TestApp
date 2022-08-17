@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSiswasTable extends Migration
+class CreateMuridsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,17 @@ class CreateSiswasTable extends Migration
      */
     public function up()
     {
-        Schema::create('siswas', function (Blueprint $table) {
+        Schema::create('murids', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_post');
-            $table->foreign('id_post')->references('id')->on('posts');
+            $table->integer('nis');
             $table->string('nama');
-            $table->string('nis')->unique();
-            $table->enum('jenis_kelamin', ['Laki-laki', 'Perempuan']);
+            $table->enum('jk', ['Laki-laki', 'Perempuan']);
             $table->string('agama');
             $table->date('tgl_lahir');
             $table->text('alamat');
+            $table->enum('jurusan', ['Rekayasa Perangkat Lunak', 'Teknik Sepeda Motor', 'Teknik Kendaraan Ringan']);
+            $table->unsignedBigInteger('id_guru');
+            $table->foreign('id_guru')->references('id')->on('gurus')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -34,6 +35,6 @@ class CreateSiswasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('siswas');
+        Schema::dropIfExists('murids');
     }
 }
