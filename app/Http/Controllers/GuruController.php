@@ -12,10 +12,15 @@ class GuruController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $guru = Guru::all();
-        return view('guru.index', compact('guru'));
+        return view('guru.index',['active' => 'guru'], compact('guru'));
     }
 
     /**
@@ -25,7 +30,7 @@ class GuruController extends Controller
      */
     public function create()
     {
-        return view('guru.create');
+        return view('guru.create',['active' => 'guru']);
 
     }
 
@@ -57,7 +62,7 @@ class GuruController extends Controller
     public function show($id)
     {
         $guru = Guru::findOrFail($id);
-        return view('guru.show', compact('guru'));
+        return view('guru.show',['active' => 'guru'], compact('guru'));
     }
 
     /**
@@ -69,7 +74,7 @@ class GuruController extends Controller
     public function edit($id)
     {
         $guru = Guru::findOrFail($id);
-        return view('guru.edit', compact('guru'));
+        return view('guru.edit',['active' => 'guru'], compact('guru'));
 
     }
 

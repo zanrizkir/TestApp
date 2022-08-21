@@ -13,11 +13,18 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $post = Post::all();
+        $active = 'post';
         
-        return view('post.post', compact('post'));
+        return view('post.post', compact('post','active'));
     }
 
     
@@ -29,7 +36,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('post.create');
+        return view('post.create',['active' => 'post']);
     }
 
     /**
@@ -49,7 +56,7 @@ class PostController extends Controller
             'tempat' => 'required',
             'alamat' => 'required',
             'tanggal_lahir' => 'required',
-            'no_telpon' => 'required',
+            'no_telpon' => 'required|unique:posts|max:255',
         ]);
 
         $post = new Post();
@@ -78,7 +85,7 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::findOrFail($id);
-        return view('post.show', compact('post'));
+        return view('post.show',['active' => 'post'], compact('post'));
     }
 
     /**
@@ -90,7 +97,7 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = Post::findOrFail($id);
-        return view('post.edit', compact('post'));
+        return view('post.edit',['active' => 'post'], compact('post'));
 
     }
 

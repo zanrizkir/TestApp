@@ -1,4 +1,5 @@
 <footer class="main-footer">
     <p class="text-center mt-3">Latihan dan tugas ini di buat dengan <i class="fas fa-heart text-danger"></i> by
-        {{ Auth::user()->name }}</p>
+        {{-- {{ Auth::user()->name }}</p> --}}
+        Sauzan</p>
 </footer>

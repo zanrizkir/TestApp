@@ -14,10 +14,15 @@ class MuridController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $murid = Murid::with('guru')->get();
-        return view('murid.index', compact('murid'));
+        return view('murid.index',['active' => 'murid'], compact('murid'));
 
     }
 
@@ -29,7 +34,7 @@ class MuridController extends Controller
     public function create()
     {
         $guru = Guru::all();
-        return view('murid.create', compact('guru'));
+        return view('murid.create',['active' => 'murid'], compact('guru'));
 
     }
 
@@ -76,7 +81,7 @@ class MuridController extends Controller
     public function show($id)
     {
         $murid = Murid::findOrFail($id);
-        return view('murid.show', compact('murid'));
+        return view('murid.show',['active' => 'murid'], compact('murid'));
 
     }
 
@@ -90,7 +95,7 @@ class MuridController extends Controller
     {
         $murid = Murid::findOrFail($id);
         $guru = Guru::all();
-        return view('murid.edit', compact('murid', 'guru'));
+        return view('murid.edit',['active' => 'murid'], compact('murid', 'guru'));
 
     }
 

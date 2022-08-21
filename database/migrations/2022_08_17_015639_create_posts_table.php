@@ -23,7 +23,7 @@ class CreatePostsTable extends Migration
             $table->string('tempat');
             $table->text('alamat');
             $table->date('tanggal_lahir');
-            $table->string('no_telpon');
+            $table->string('no_telpon')->unique();
             $table->timestamps();
         });
     }

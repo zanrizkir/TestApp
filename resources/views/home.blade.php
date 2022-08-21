@@ -15,6 +15,7 @@
                     @endif
 
                     Selamat, {{ Auth::user()->name }} Kamu berhasil login
+                    {{-- Selamat,  Kamu berhasil login --}}
 
                     {{-- {{ __('You are logged in!') }} --}}
                 </div>
